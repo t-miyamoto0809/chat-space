@@ -1,11 +1,15 @@
 
 # **開発環境**
-_ Ruby 
-_ Rails  5.0.7.2
+
+_ Ruby 2.3.1
+_ Rails 5.0.7.2
 
 # **DB設計**
+
 ***
+
 ## usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, index|
@@ -14,21 +18,27 @@ _ Rails  5.0.7.2
 |password_confirmation|string|null: false|
 
 ### Association
+
 - has_many :groups, through: :members
 - has_many :messages
 
 ***
+
 ## groupsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, unique: true|
 
 ### Association
+
 - has_many :users, through: :members
 - has_many :messages
 
 ***
+
 ## messagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -38,17 +48,21 @@ _ Rails  5.0.7.2
 |created_at|datetime|null: false|
 
 ### Association
+
 - belongs_to :group
 - belongs_to :user
 
 ***
+
 ## membersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
+
 - belongs_to :group
 - belongs_to :user
 
