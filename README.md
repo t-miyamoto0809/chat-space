@@ -1,24 +1,52 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# **開発環境**
+- Ruby 2.3.1
+- Rails 5.0.7.2
 
-Things you may want to cover:
+# **DB設計**
+***
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index|
 
-* Ruby version
 
-* System dependencies
+### Association
+- has_many :groups, through: :members
+- has_many :messages
+- has_many :members
 
-* Configuration
+***
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
 
-* Database creation
+### Association
+- has_many :users, through: :members
+- has_many :messages
+- has_many :members
 
-* Database initialization
+***
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+***
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
