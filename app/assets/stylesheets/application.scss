@@ -7,7 +7,10 @@ html {
   background: #FFF;
 }
 
-
+.chat-main {
+  width: calc(100vw - 300px);
+  float: left;
+}
 
 
 
@@ -15,4 +18,7 @@ html {
 
 @import "./reset";
 @import "font-awesome";
-@import "./side-bar"
+@import "./side-bar";
+@import "./chat-main-header";
+@import "./chat-main-messages";
+@import "./form"
