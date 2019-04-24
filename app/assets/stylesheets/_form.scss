@@ -1,7 +1,9 @@
+@import "./color";
+
 .form {
   height: 90px;
   padding: 20px 40px;
-  background-color: #ddd;
+  background-color: $form-background-color;
   .new-message {
     display: flex;
     input {
@@ -16,7 +18,7 @@
         height: 50px;
         width: 100%;
         padding: 0 40px 0 10px;
-        color: #434a54;
+        color: $message-info__user-color;
         border-style: none;
       }
       .image-label {
@@ -32,8 +34,8 @@
       height: 50px;
       padding: 0 30px;
       margin-left: 15px;
-      background-color: #38aef0;
-      color: white;
+      background-color: $edit-color;
+      color: $white;
       cursor: pointer;
     }
   }

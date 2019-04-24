@@ -1,7 +1,9 @@
+@import "./color";
+
 .messages {
   height: calc(100vh - 190px);
   padding: 46px 40px;
-  background-color: #fafafa;
+  background-color: $message-background-color;
   overflow: scroll;
   .message {
     padding-bottom: 40px;
@@ -9,18 +11,18 @@
       display: flex;
       margin-bottom: 10px;
       .message-info__user {
-        color: #434a54;
+        color: $message-info__user-color;
         font-size: 16px;
         font-weight: bold;
       }
       .message-info__date {
-        color: #999999;
+        color: $member-list-color;
         font-size: 12px;
         margin-left: 10px;
       }
     }
     .message__text {
-      color: #434a54;
+      color: $message-info__user-color;
       font-size: 14px;
       margin-bottom: 10px;
     }
