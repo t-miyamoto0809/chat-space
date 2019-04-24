@@ -19,7 +19,7 @@
     font-weight: bold;
     .user-menu {
       display: flex;
-      .user-menu li {
+      & li {
         margin-left: 0.3rem;
       }
     }
@@ -31,26 +31,13 @@
     overflow: scroll;
     .group {
       margin-bottom: 40px;
-      .group__group-name {
+      &__group-name {
         font-size: 15px;
         margin-bottom: 5px;
       }
-      .group__latest-message {
+      &__latest-message {
         font-size: 11px;
       }
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
