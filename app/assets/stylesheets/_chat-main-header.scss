@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px $border-color;
-
   .current-group {
     font-size: 20px;
     color: $current-group-color;
@@ -33,15 +32,12 @@
       }
     }
   }
-  a {
-    text-decoration: none;
-    .main-header__edit-btn {
-      height: 40px;
-      line-height: 40px;
-      padding: 0 20px;
-      margin-top: 30px;
-      border: solid 1px $edit-color;
-      color: $edit-color;
-    }
+  &__edit-btn {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px $edit-color;
+    color: $edit-color;
   }
 }
