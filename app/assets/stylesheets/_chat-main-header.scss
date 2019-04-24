@@ -11,7 +11,7 @@
     font-size: 20px;
     color: $current-group-color;
     margin-top: 35px;
-    .current-group__name {
+    &__name {
       h2 {
         font-size: 100%;
         font-weight: normal;
@@ -22,7 +22,7 @@
       margin-top: 15px;
       font-size: 12px;
       color: $member-list-color;
-      .member-list__member {
+      &__member {
         li {
           margin: 0;
           padding: 0;
@@ -45,5 +45,3 @@
     }
   }
 }
-
-
