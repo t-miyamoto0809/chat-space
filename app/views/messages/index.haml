@@ -1,0 +1,47 @@
+.side-bar
+  .side-header
+    %p.side-hedder__user-name sample1
+    %ul.user-menu
+      %li.user-menu__edit-user
+        = link_to do
+          %i.fa.fa-edit
+      %li.user-menu__new-group
+        = link_to do
+          %i.fa.fa-cog
+  .groups
+    = link_to root_path do
+      .group
+        %p.group__name sample3
+        %p.group__latest-message sample4
+
+.chat-main
+  .main-header
+    .current-group
+      %h2.current-group__name
+        sample6
+      %ul.member-list
+        Member :
+        %li.member-list__member
+          sample5
+    = link_to root_path do
+      .main-header__edit-btn Edit
+
+  .messages
+    .message
+      .message-info
+        %p.message-info__user sample7
+        %p.message-info__date 1234
+      %p.message__text sample8
+    .message
+      .message-info
+        %p.message-info__user sample7
+        %p.message-info__date 1234
+      %p.message__text sample8
+
+  .form
+    %form.new-message(action="")
+      .input-box
+        %input.input-box__text( placeholder='type a message' type='text')
+        %label.image-label(for="")
+          %i.fa.fa-image
+      %input.new-message__submit-btn(type="submit")

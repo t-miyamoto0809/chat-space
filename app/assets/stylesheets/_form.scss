@@ -1,0 +1,42 @@
+@import "./color";
+
+.form {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: $form-background-color;
+  .new-message {
+    display: flex;
+    input {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    .input-box {
+      position: relative;
+      width: 100%;
+      &__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: $message-info__user-color;
+        border-style: none;
+      }
+      .image-label {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+    &__submit-btn {
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: $edit-color;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

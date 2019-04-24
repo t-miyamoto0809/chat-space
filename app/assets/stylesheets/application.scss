@@ -1,2 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: #000;
+  background: #FFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+.chat-main {
+  width: calc(100vw - 300px);
+  float: left;
+}
+
 @import "./reset";
 @import "font-awesome";
+@import "./side-bar";
+@import "./chat-main-header";
+@import "./chat-main-messages";
+@import "./form";
+@import "./color"

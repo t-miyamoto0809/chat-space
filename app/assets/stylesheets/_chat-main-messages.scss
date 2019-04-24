@@ -1,0 +1,30 @@
+@import "./color";
+
+.messages {
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: $message-background-color;
+  overflow: scroll;
+  .message {
+    padding-bottom: 40px;
+    &-info {
+      display: flex;
+      margin-bottom: 10px;
+      &__user {
+        color: $message-info__user-color;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: $member-list-color;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    &__text {
+      color: $message-info__user-color;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}

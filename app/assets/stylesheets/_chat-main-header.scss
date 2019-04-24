@@ -1,0 +1,43 @@
+@import "./color";
+
+.main-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px $border-color;
+  .current-group {
+    font-size: 20px;
+    color: $current-group-color;
+    margin-top: 35px;
+    &__name {
+      h2 {
+        font-size: 100%;
+        font-weight: normal;
+      }
+    }
+    .member-list {
+      display: flex;
+      margin-top: 15px;
+      font-size: 12px;
+      color: $member-list-color;
+      &__member {
+        li {
+          margin: 0;
+          padding: 0;
+        }
+        li+li {
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+  &__edit-btn {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px $edit-color;
+    color: $edit-color;
+  }
+}

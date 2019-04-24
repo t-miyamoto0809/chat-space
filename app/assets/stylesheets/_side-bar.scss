@@ -1,0 +1,42 @@
+@import "./color";
+
+.side-bar {
+  a {
+    color: $white;
+  }
+  width: 300px;
+  color: $white;
+  float: left;
+  .side-header {
+    background-color: $side-header-color;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    .user-menu {
+      display: flex;
+      & li {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+  .groups {
+    height: calc(100vh - 100px);
+    background-color: $groups-color;
+    padding: 20px 20px 0;
+    overflow: scroll;
+    .group {
+      margin-bottom: 40px;
+      &__group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__latest-message {
+        font-size: 11px;
+      }
+    }
+  }
+}
