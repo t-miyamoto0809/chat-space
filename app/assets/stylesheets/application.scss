@@ -22,4 +22,7 @@ a {
 @import "./chat-main-header";
 @import "./chat-main-messages";
 @import "./form";
-@import "./color"
+@import "./color";
+@import "modules/user";
+@import "config/colors";
+@import "modules/flash";
