@@ -1,6 +1,6 @@
 .side-bar
   .side-header
-    %p.side-hedder__user-name
+    %h3.side-hedder__user-name
       = current_user.name
     %ul.user-menu
       %li.user-menu__edit-user
@@ -10,7 +10,10 @@
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
   .groups
-    = link_to root_path do
+    - current_user.groups.each do |group|
       .group
-        %p.group__name sample3
-        %p.group__latest-message sample4
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__latest-message
+            メッセージはまだありません。
