@@ -6,11 +6,6 @@
   background-color: $form-background-color;
   .new-message {
     display: flex;
-    input {
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-    }
     .input-box {
       position: relative;
       width: 100%;
@@ -27,6 +22,9 @@
         top: 10px;
         right: 10px;
         cursor: pointer;
+        &__input {
+          display: none;
+        }
       }
     }
     &__submit-btn {
