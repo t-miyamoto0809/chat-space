@@ -17,6 +17,7 @@ $(function(){
                 </div>`
     search_list.append(html)
   }
+
   function appendEditUser(id,name){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value='${id}'>
@@ -25,7 +26,6 @@ $(function(){
                 </div>`
     search_append_list.append(html);
   }
-
 
     $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val(); //val()でフォームの値を取得
@@ -56,12 +56,10 @@ $(function(){
     $(".chat-group-form").on("click", ".user-search-add", function(){
       var id = $(this).data('user-id');
       var name = $(this).data('user-name');
-      console.log(id, name);
       appendEditUser(id,name);
       var user = $(this).parent().remove();
     });
     $(".chat-group-form").on("click", ".user-search-remove", function(){
-      var user = $(this).parent().remove();
-      // .user-search-removeクラスの親要素を指定して削除
+      var user = $(this).parent().remove();// .user-search-removeクラスの親要素を指定して削除
     });
 });
