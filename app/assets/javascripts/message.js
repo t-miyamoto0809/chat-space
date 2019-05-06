@@ -48,5 +48,23 @@ $(document).on('turbolinks:load', function () {
         $('.new-message__submit-btn').prop('disabled', false);
       })
     })
+    //自動更新
+    var reloadMessages = function() {
+      var last_message_id = $(".message").last().data('message-id')
+      var groupId = location.pathname.split('/')[2]
+      $.ajax({
+        url:      `/groups/${groupId}/api/messages`,
+        type:     'get',
+        dataType: 'json',
+        data:     {id: last_message_id }
+      })
+      .done(function(messages) {
+        console.log('success');
+      })
+      .fail(function(){
+        console.log('error');
+      });
+    };
+    setInterval(reloadMessages, 5000);
   });
 });
