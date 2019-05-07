@@ -9,6 +9,8 @@ class Api::MessagesController < ApplicationController
     end
   end
 
+private
+
   def set_group
     @group = Group.find(params[:group_id])
   end
