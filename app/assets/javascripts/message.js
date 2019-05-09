@@ -54,27 +54,29 @@ $(document).on('turbolinks:load', function () {
     });
     //自動更新
     var reloadMessages = function() {
-      var last_message_id = $(".message").last().data('message-id')
-      var groupId = location.pathname.split('/')[2]
-      $.ajax({
-        url:      `/groups/${groupId}/api/messages`,
-        type:     'GET',
-        dataType: 'json',
-        data:     {id: last_message_id }
-      })
-      .done(function(messages) {
-        var insertHTML = ''; //追加するHTMLの入れ物
-        messages.forEach(function(message){ //配列の中身を一つずつ取り出す,map()でも良い？
-          if(message.id > last_message_id){ //ブラウザ上のidとDBのidを比較
-            insertHTML = buildHtml(message);//関数buildHTMLに配列の中身を一つずつ代入
-            $('.messages').append(insertHTML);//message送信時と同じ
-            scrollBottom();
-          };
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+        var last_message_id = $(".message").last().data('message-id')
+        var groupId = location.pathname.split('/')[2]
+        $.ajax({
+          url:      `/groups/${groupId}/api/messages`,
+          type:     'GET',
+          dataType: 'json',
+          data:     {id: last_message_id }
+        })
+        .done(function(messages) {
+          var insertHTML = ''; //追加するHTMLの入れ物
+          messages.forEach(function(message){ //配列の中身を一つずつ取り出す,map()でも良い？
+            if(message.id > last_message_id){ //ブラウザ上のidとDBのidを比較
+              insertHTML = buildHtml(message);//関数buildHTMLに配列の中身を一つずつ代入
+              $('.messages').append(insertHTML);//message送信時と同じ
+              scrollBottom();
+            };
+          });
+        })
+        .fail(function(){
+          alert('error');
         });
-      })
-      .fail(function(){
-        alert('error');
-      });
+      };
     };
     setInterval(reloadMessages, 5000);
   });
